@@ -27,8 +27,8 @@ def generate():
         if 'prompt' in data:
             prompt = get_prompt(data['prompt'])
             output = model(prompt, max_tokens=MAX_TOKENS, echo=False)
-            return jsonify(output)
-            #out_prompt = output['choices'][0]['text'].splitlines()
+            out_prompt = output['choices'][0]['text'].splitlines()
+            return jsonify({'message': 'Test'})
             #return jsonify(out_prompt[1:] if len(out_prompt) > 1 else out_prompt)
         else:
             return jsonify({"error": "Missing required parameters"}), 400
