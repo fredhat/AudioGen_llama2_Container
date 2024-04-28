@@ -26,7 +26,7 @@ def generate():
         data = json.loads(request.data)
         if 'prompt' in data:
             prompt = get_prompt(data['prompt'])
-            #output = model(prompt, max_tokens=MAX_TOKENS, echo=False)
+            output = model(prompt, max_tokens=MAX_TOKENS, echo=False)
             return jsonify({'message': 'Post test successful'})
             #out_prompt = output['choices'][0]['text'].splitlines()
             #return jsonify(out_prompt[1:] if len(out_prompt) > 1 else out_prompt)
