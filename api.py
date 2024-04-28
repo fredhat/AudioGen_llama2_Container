@@ -22,7 +22,11 @@ def hello_world():
 
 @app.route('/gen', methods=['POST'])
 def generate():
-    return jsonify({'message': 'Post test successful'})
+    data = json.loads(request.data)
+    if 'prompt' in data:
+        return jsonify({'message': 'Post test successful'})
+    else:
+        return jsonify({'message': 'Post test unsuccessful'})
     #try:
     #    data = json.loads(request.data)
     #    if 'prompt' in data:
