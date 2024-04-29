@@ -5,8 +5,8 @@ from awaits.awaitable import awaitable
 app = Quart(__name__)
 
 model_path = "./llama2/llama-2-7b-chat.Q2_K.gguf"
-SYSTEM_PROMPT = "You are a professional musician. You will be prompted with a list of names of songs and artists. Select a random song from the list and provide a short phrase describing its genre. Select a random song from the list and provide a short phrase describing its musical style. Select a random song from the list and provide a short phrase describing its instrumentation. Do not acknowledge the prompt. Do not repeat the prompt back. Do not ask for further prompts."
-MAX_TOKENS = 1000
+SYSTEM_PROMPT = "You are a professional musician. You will be prompted with the name of a song and an artist. Provide a short phrase describing its genre. Provide a short phrase describing its musical style. Provide a short phrase describing its instrumentation. Do not acknowledge the prompt. Do not repeat the prompt back. Do not ask for further prompts."
+MAX_TOKENS = 500
 
 model = Llama(model_path=model_path)
 
