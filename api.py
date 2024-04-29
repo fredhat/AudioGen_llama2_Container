@@ -33,7 +33,8 @@ async def generate():
             prompt = get_prompt(data['prompt'])
             output = await generate_output(prompt)
             out_prompt = output['choices'][0]['text'].splitlines()
-            return jsonify(out_prompt[1:] if len(out_prompt) > 1 else out_prompt)
+            return jsonify({'message': 'Test out'})
+            #return jsonify(out_prompt[1:] if len(out_prompt) > 1 else out_prompt)
         else:
             return jsonify({"error": "Missing required parameters"}), 400
     except Exception as e:
