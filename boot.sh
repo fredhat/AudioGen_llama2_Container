@@ -1,2 +1,2 @@
 #!/bin/sh
-exec gunicorn -b :5000 --timeout 1800 api:app
+exec gunicorn -k uvicorn.workers.UvicornWorker -b :5000 --timeout 1800 api:app
