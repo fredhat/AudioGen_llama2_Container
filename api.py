@@ -23,7 +23,7 @@ def generate_output(prompt):
 
 @app.route('/', methods=['GET'])
 async def test():
-    return jsonify({'message': 'Test successful'})
+    return jsonify({'message': 'Test'})
 
 @app.route('/gen', methods=['POST'])
 async def generate():
