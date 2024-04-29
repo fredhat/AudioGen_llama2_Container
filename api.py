@@ -5,7 +5,7 @@ from awaits.awaitable import awaitable
 app = Quart(__name__)
 
 model_path = "./llama2/llama-2-7b-chat.Q2_K.gguf"
-SYSTEM_PROMPT = "You are a professional musician. You will be prompted with the name of a song and an artist. Provide a list of short phrases describing its genre, musical style, and instrumentation. Do not acknowledge the prompt. Do not repeat the prompt back. Do not ask for further prompts."
+SYSTEM_PROMPT = "You are a professional musician. You will be prompted with the name of a song and an artist. Provide a list of three short phrases describing its genre, musical style, and instrumentation. Do not acknowledge the prompt. Do not repeat the prompt back. Do not ask for further prompts."
 MAX_TOKENS = 500
 
 model = Llama(model_path=model_path)
@@ -23,7 +23,7 @@ def generate_output(prompt):
 
 @app.route('/', methods=['GET'])
 async def test():
-    return jsonify({'message': 'Test'})
+    return jsonify({'message': 'Test new'})
 
 @app.route('/gen', methods=['POST'])
 async def generate():
